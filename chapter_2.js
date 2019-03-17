@@ -53,13 +53,7 @@ function chessGrid(size) {
   let lineCount = 0;
 
   while(lineCount < size) {
-    if (lineCount % 2 == 0) {
-      width += " ";
-      width += "#";
-    } else {
-      width += "#";
-      width += " ";
-    }
+    lineCount % 2 == 0 ? width += " #" : width += "# ";
   
     if (width.length > size) {
       board += width + "\n";
@@ -68,7 +62,7 @@ function chessGrid(size) {
     }
   }
 
-  console.log(board);
+  return board;
 }
 
-// chessGrid(10);
+console.log(chessGrid(10));
